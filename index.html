@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>Wholesale Distribution Smart App</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="login" class="login-screen">
+  <div class="login-card">
+    <div class="brand-mark">WD</div>
+    <h1>Wholesale Distribution</h1>
+    <p>Smart business management system</p>
+    <form id="loginForm">
+      <input id="loginUser" placeholder="Username" autocomplete="username" required>
+      <input id="loginPass" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button class="primary" type="submit">Login</button>
+    </form>
+    <small>Default login: admin / admin123</small>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="side-brand"><span>WD</span><div><b id="companySide">Wholesale</b><small>Distribution</small></div></div>
+    <nav id="nav">
+      <button data-page="dashboard" class="active">🏠 Dashboard</button>
+      <button data-page="invoice">🧾 New Invoice</button>
+      <button data-page="bills">📋 Bills</button>
+      <button data-page="customers">👥 Customers</button>
+      <button data-page="products">📦 Products & Stock</button>
+      <button data-page="purchases">🚚 Purchases</button>
+      <button data-page="recovery">💰 Recovery</button>
+      <button data-page="ledger">📒 Customer Ledger</button>
+      <button data-page="outstanding">⚠️ Outstanding</button>
+      <button data-page="reports">📊 Reports</button>
+      <button data-page="settings">⚙️ Settings</button>
+      <button data-page="backup">💾 Backup / Restore</button>
+    </nav>
+    <button id="logoutBtn" class="logout">Logout</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="menuBtn" class="icon-btn">☰</button>
+      <div>
+        <h2 id="pageTitle">Dashboard</h2>
+        <span id="today"></span>
+      </div>
+      <div class="top-actions"><button class="secondary" onclick="showPage('invoice')">＋ Invoice</button></div>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+
+<div id="toast"></div>
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="modal-close" onclick="closeModal()">×</button><div id="modalBody"></div></div></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
